@@ -1,0 +1,61 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+  "plugins": ["react"],
+  "env": {
+    "browser": true,
+    "jest": true,
+    "es6": true,
+    "node": true
+  },
+  "settings": {
+    "react": {
+      "pragma": "React",
+      "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "paths": ["./src"]
+      }
+    }
+  },
+  "rules": {
+    "react/prop-types": "off",
+    "no-console": "error",
+    "allowExpressions": "off",
+    "no-extra-boolean-cast": "off",
+    "indent": ["error", 2, { "SwitchCase": 1 }],
+    "import/no-default-export": "off",
+    "import/order": ["error", { "groups": ["builtin", "external", "parent", "sibling", "index"] }],
+    "import/newline-after-import": "error",
+    "react/display-name": "off",
+    "no-shadow": "off"
+  },
+  "overrides": [
+    {
+      "files": ["src/registerServiceWorker.ts"],
+      "rules": {
+        "no-console": "off",
+        "indent": "off"
+      }
+    },
+    {
+      "files": ["**/*.test.ts", "**/*.test.tsx"],
+      "env": {
+        "jest": true
+      },
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "warn"
+      }
+    }
+  ],
+  "parserOptions": {
+    "ecmaVersion": 11,
+    "sourceType": "module"
+  }
+}

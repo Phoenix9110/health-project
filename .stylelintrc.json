@@ -1,0 +1,16 @@
+{
+  "extends": "stylelint-config-recommended-scss",
+  "rules": {
+    "indentation": 2,
+    "at-rule-no-unknown": null,
+    "no-empty-source": null,
+    "scss/selector-no-redundant-nesting-selector": true,
+    "no-invalid-double-slash-comments": true,
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global"]
+      }
+    ]
+  }
+}
